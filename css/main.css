@@ -61,6 +61,9 @@ body {
   background-repeat: no-repeat;
 } 
 */
+button{
+    all: unset;
+}
 
 .wrapper {
     width: 100%;
@@ -112,11 +115,15 @@ header nav ul li a:hover{
     border-bottom: 3px solid #FBD784;
 }
 
-.log-reg {}
+.log-reg:hover {
+    display: inline-block;  
+    color: #FBD784;
+    border-radius: 50%;
+   
+}
 
 .hero {
     margin-top: 198px;
-
 }
 
 .hero-info {
@@ -140,11 +147,12 @@ h1 {
     color:#ffffff;
     letter-spacing: 4px;
 }
+/* Social media block */
 .social-block{
     position: absolute; /* Could also be fixed */
     top: 359px;
     left: 80px;
-    z-index: 9999; /* A high value to ensure it appears on top */
+    z-index: 5; /* A high value to ensure it appears on top */
 
 }
 .social-block ul{
@@ -152,24 +160,127 @@ h1 {
     text-align: center;
 }
 .social-block li {
-    margin-bottom: 24px; /* Add 24px space between each item */
+    margin-bottom: 24px; 
 }
 
 .social-block li:last-child {
-    margin-bottom: 0; /* Remove margin for the last item */
+    margin-bottom: 0; 
 }
 
 .social-block ul li a img {
-    transition: filter 0.1s; /* Smooth transition */
+    transition: filter 0.1s; 
 }
 
 .social-block ul li a img:hover {
     filter: brightness(0) saturate(100%) hue-rotate(60deg) brightness(1.5);
 }
+.social-block ul li img:hover {
+    filter: brightness(0) saturate(100%) hue-rotate(60deg) brightness(1.5);
+}
+.followUs {
+    all: unset;
+    display: inline-block;
+    padding: 0px 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
 
+/* Scroll down Hero button */
 .scrollDown a img {
     transition: filter 0.1s; /* Smooth transition */
 }
 .scrollDown img:hover{
     filter: brightness(0) saturate(100%) hue-rotate(60deg) brightness(1.5);
+}
+/* Follow Us modal window */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.4); 
+ 
+}
+
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; 
+    border-radius: 6px;
+}
+.followUsTitle{
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: bold;
+    font-family: 'Gilroy';
+}
+.formField{
+    width: 100%;
+    height: 24px;
+    line-height: 18px;
+    border-radius: 4px;
+}
+.requiredField{
+    color: rgb(251, 84, 84);
+}
+.followUs_subscribe{
+    background-color: #edbb46;
+    font-family: 'Gilroy';
+    color: #ffffff;
+    padding: 10px 20px;
+    border-color: none;
+    font-weight: 700;
+    margin: 16px auto 0; 
+    display: block;
+}
+
+.followUs_subscribe:hover{
+    background-color: #FBD784;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Gilroy';   
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Toas message for Follow Us form */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #1c8a00;
+    font-weight: bold;
+    font-family: 'Gilroy';   
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
 }
