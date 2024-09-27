@@ -47,6 +47,7 @@
 
 body {
     font-weight: 400;
+    background-color: #0B1D26;
     background-image: url(../assets/img/heroBG.png);
     background-attachment: local;
     background-repeat: no-repeat;
@@ -152,7 +153,7 @@ h1 {
     position: absolute; /* Could also be fixed */
     top: 359px;
     left: 80px;
-    z-index: 5; /* A high value to ensure it appears on top */
+    z-index: 9; /* A high value to ensure it appears on top */
 
 }
 .social-block ul{
@@ -205,7 +206,6 @@ h1 {
  
 }
 
-
 .modal-content {
     background-color: #fff;
     margin: 15% auto; 
@@ -221,10 +221,13 @@ h1 {
     font-family: 'Gilroy';
 }
 .formField{
-    width: 100%;
+    width: 92%;
     height: 24px;
     line-height: 18px;
     border-radius: 4px;
+    padding-left: 10px; /* Adjust the value as needed */
+    padding-right: 10px;
+    
 }
 .requiredField{
     color: rgb(251, 84, 84);
@@ -272,7 +275,7 @@ h1 {
     border-radius: 5px;
     padding: 16px;
     position: fixed;
-    z-index: 1;
+    z-index: 8;
     left: 50%;
     bottom: 30px;
     font-size: 17px;
@@ -283,4 +286,63 @@ h1 {
 .toast.show {
     visibility: visible;
     opacity: 1;
+}
+.article{
+    margin: 842px auto;
+    height: 3040px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+/* 01 */
+
+
+.get_started {
+    width: 1462px;
+    height: 720px;
+    margin: 0 auto;
+    position: relative;
+    /* border: 3px solid #73AD21; */
+    display: flex;
+    justify-content: space-between;
+
+}
+.section_group{
+    width: 782px;
+}
+
+.number{
+    display: inline-block;
+    margin-top: 33px;
+    
+}
+.absolute_block{
+    position: relative;
+}
+.section_content {
+    position: absolute;
+    top: 103px;
+    left: 150px;
+    /* border: 3px solid #73AD21; */
+    width: 632px;
+    height: 439x;
+}
+h3{
+    color: #ffffff;
+    font-size: 68px;
+    font-weight: 600;
+    font-family: 'Chronicle';  
+}
+p{
+   margin-top:27px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Gilroy';  
+    line-height: 1.5;
+}
+.section_content a{
+    display: inline-block;
+    margin-top:27px;
 }
