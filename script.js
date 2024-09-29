@@ -42,3 +42,10 @@ document.getElementById("contactForm").onsubmit = function(event) {
     })
     .catch(error => console.error('Error:', error));
 };
+
+document.getElementById("scrollButton").addEventListener("click", function() {
+    window.scrollBy({
+      top: 1440, // Scroll down 1440px
+      behavior: 'smooth' // Smooth scrolling
+    });
+  });
