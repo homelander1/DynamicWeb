@@ -1,5 +1,5 @@
 <?php
-function processForm($data)
+function registrationForm($data)
 {
     $dbserver = "localhost";
     $username = "root";
@@ -12,13 +12,14 @@ function processForm($data)
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Sanitize and validate inputs
-    $name = trim($data["name"]);
+    $first_name = trim($data["first_name"]);
+    $last_name = trim($data["last_name"]);
     $email = trim($data["email"]);
+    $password = $data["password"];
 
     // Prepare the SQL statement to prevent SQL injection
-    $stmt = $conn->prepare("INSERT INTO subscribers (name, email, subscription_date) VALUES (?, ?, NOW())");
-    $stmt->bind_param("ss", $name, $email);
+    $stmt = $conn->prepare("INSERT INTO users (email, password, first_name, last_name, registration_date) VALUES (?, ?, ?, ?, NOW())");
+    $stmt->bind_param("ssss", $email, $password, $first_name, $last_name);
 
     if ($stmt->execute()) {
         $stmt->close();

@@ -29,7 +29,7 @@
                     <li><a href="#">Equipment</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
-                <a class="log-reg" href="/loging.php">Log in</a>
+                <button id="openLoginModal" class="log-reg">Log in</button>
             </nav>
         </header>
 
@@ -41,8 +41,15 @@
 
             </div>
         </div>
-
     </div>
+
+    <!-- subscription data sent to db -->
+    <?php
+    include './ContactUs.php';
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        processForm($_POST);
+    }
+    ?>
 
     <!-- Follow Us modal window -->
     <div id="myModal" class="modal">
@@ -50,19 +57,36 @@
             <div class="followUsTitle">Follow Us<div class="close">X</div>
             </div>
 
-            <form id="contactForm" action="/ContactUs.php" method="POST">
+            <form id="contactForm" action="" method="POST">
                 <label for="name">Name<span class="requiredField">*</span></label><br>
-                <input type="text" id="name" name="name" class="formField" placeholder="John Smith"><br><br>
+                <input type="text" id="name" name="name" class="formField" placeholder="John Smith" required><br><br>
                 <label for="email">Email<span class="requiredField">*</span></label><br>
                 <input type="email" id="email" name="email" class="formField" placeholder="example@example.com"><br><br>
 
                 <button type="submit" class="followUs_subscribe">SUBSCRIBE</button>
             </form>
+
+
         </div>
     </div>
 
-    <!-- Toast notification -->
-    <div id="toast" class="toast">Subscribed successfully</div>
+
+    <!-- Log in form -->
+    <div id="myModalLogin" class="modalLog">
+        <div class="modal-content">
+            <div class="followUsTitle">Log in<div class="close">X</div>
+            </div>
+            <form action="" method="post">
+                <label>Email</label>
+                <input type="email" name="login" placeholder="Enter email address"></br>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password"></br>
+                <button type="submit">Войти</button>
+                <p>Don't have and account? -> <a href="signup.php">Sign Up</a>!</p>
+            </form>
+        </div>
+    </div>
+
 
 
     <div class="article">
@@ -148,22 +172,23 @@
                     <li><a href="#" class="last_link">Privacy Policy</a></li>
                 </ul>
             </div>
-                <div class="footer_link">
-                    <ul>
-                        <li>
-                            <p class="footer_title">More on MTNT</p>
-                            </p>
-                        </li>
-                        <li><a href="#">The Team</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#" class="last_link">Press</a></li>
-                    </ul>
-                </div>
-
+            <div class="footer_link">
+                <ul>
+                    <li>
+                        <p class="footer_title">More on MTNT</p>
+                        </p>
+                    </li>
+                    <li><a href="#">The Team</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#" class="last_link">Press</a></li>
+                </ul>
             </div>
+
+        </div>
     </footer>
 
     <script src="/script.js"></script>
+
 </body>
 
 </html>
