@@ -50,7 +50,7 @@
             <div class="followUsTitle">Follow Us<div class="close">X</div>
             </div>
 
-            <form id="contactForm" action="/contactUS.php" method="POST">
+            <form id="contactForm" action="/ContactUs.php" method="POST">
                 <label for="name">Name<span class="requiredField">*</span></label><br>
                 <input type="text" id="name" name="name" class="formField" placeholder="John Smith"><br><br>
                 <label for="email">Email<span class="requiredField">*</span></label><br>

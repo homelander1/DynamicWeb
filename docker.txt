@@ -1,0 +1,17 @@
+Start a mysql server instance
+Starting a MySQL instance is simple:
+
+$ docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+
+docker ps // to see running processes
+
+$ docker run --name phpmyadmin -d --link some-mysql:db -p 7098:80 phpmyadmin/phpmyadmin
+
+password:
+root
+my-secret-pw
+
+
+ Server: db
+ Database: mysql
+ Table: Subsribers
