@@ -1,0 +1,12 @@
+{
+    "name": "v/mntn",
+    "description": "PHP subject",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework/",
+            "App\\": "src/App/"
+        }
+    }
+}
